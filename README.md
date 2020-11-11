@@ -33,6 +33,7 @@ The project is distributed under the MIT License. See [LICENSE](https://github.c
 <p>
 <p>
   <img src="https://github.com/IshaanOhri/IshaanOhri/blob/master/assets/nodejs.svg" height=40>
+  <img src="https://github.com/IshaanOhri/IshaanOhri/blob/master/assets/googlecloud.png" height=40>
 </p>
 </p>
 
