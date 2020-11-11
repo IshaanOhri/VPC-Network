@@ -7,7 +7,7 @@ body {
     text-align: center;
     font-size: 30px;
   }
-  #form {
+  #form, #entries {
     border-radius: 10px;
     padding-left: 80px;
     padding-right: 80px;

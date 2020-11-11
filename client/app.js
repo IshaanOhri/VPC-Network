@@ -13,7 +13,11 @@ $(document).ready(function () {
       };
       
       $.ajax(settings).done(function (response) {
-        alert(response.message);
+        if(response.success){
+          alert('Data entered successfully!');
+        }else{
+          alert('Data could not be entered in database. Try again.');
+        }
       });
     });
   });
