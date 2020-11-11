@@ -9,8 +9,14 @@ const connection = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "hello123",
-  database: "test",
+  database: "test"
 });
+
+connection.query("CREATE TABLE IF NOT EXISTS my_details(name varchar(256), date varchar(256));", function(err, results, fields) {
+  if(err){
+    console.log('Table creation failed. Try starting server again.');
+  }
+})
 
 app.use(express.static("./client"));
 
@@ -18,7 +24,7 @@ app.get("/add", (req, res) => {
   const name = req.query.name;
 
   connection.query(
-    "INSERT INTO sample VALUES(?, ?)",
+    "INSERT INTO my_details VALUES(?, ?);",
     [name, moment().format('MMMM Do YYYY, h:mm:ss a')],
     function (err, results, fields) {
       if (err) {
@@ -38,7 +44,7 @@ app.get("/add", (req, res) => {
 
 app.get("/all", (req, res) => {
   connection.query(
-    "SELECT * FROM sample",
+    "SELECT * FROM my_details;",
     function (err, results, fields) {
       if (err) {
         res.send({
