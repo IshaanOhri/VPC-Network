@@ -3,7 +3,7 @@ const moment = require("moment");
 const mysql = require("mysql2");
 
 const app = express();
-const PORT = 8080;
+const PORT = 80;
 
 const connection = mysql.createConnection({
   host: "localhost",
