@@ -20,6 +20,13 @@ connection.query("CREATE TABLE IF NOT EXISTS my_details(name varchar(256), date 
 
 app.use(express.static("./client"));
 
+app.get('/', (req, res) => {
+  res.send({
+    success: true,
+    message: 'Test route'
+  });
+});
+
 app.get("/add", (req, res) => {
   const name = req.query.name;
 
