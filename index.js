@@ -6,11 +6,16 @@ const app = express();
 const PORT = 3000;
 
 const connection = mysql.createConnection({
-  host: "localhost",
+  // Place the Private IP of the SQL instance
+  host: "10.112.144.5",
+  // Place the username of the SQL instance
   user: "root",
-  password: "hello123",
-  database: "test"
+  // Place the password of the user
+  password: "hello123"
 });
+
+connection.query("CREATE DATABASE IF NOT EXISTS vpc_test;");
+connection.query("USE vpc_test;");
 
 connection.query("CREATE TABLE IF NOT EXISTS my_details(name varchar(256), date varchar(256));", function(err, results, fields) {
   if(err){
