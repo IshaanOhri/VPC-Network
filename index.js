@@ -1,6 +1,6 @@
 const express = require("express");
 const moment = require("moment");
-const mysql = require("mysql2");
+const mysql = require("mysql");
 
 const app = express();
 const PORT = 3000;
